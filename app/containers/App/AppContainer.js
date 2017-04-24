@@ -6,11 +6,8 @@ import { PreSplash } from '~/components'
 
 class AppContainer extends Component {
   static PropTypes = {
-    // isAuthenticating: PropTypes.bool.isRequired,
+    isAuthenticating: PropTypes.bool.isRequired,
   }
-  // static defaultProps = {
-  //   isAuthenticating: false
-  // }
   render () {
     return (
       <View style={{flex: 1}}>
