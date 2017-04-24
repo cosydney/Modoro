@@ -15,6 +15,6 @@ export default function ReactModoro (props) {
   return (
     <Provider store={store}>
       <AppContainer />
-    <Provider/>
+    </Provider>
   )
 }
