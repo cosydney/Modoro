@@ -1,15 +1,16 @@
 import React, { PropTypes, Component } from 'react'
 import { View } from 'react-native'
+import { connect } from 'react-redux'
 import { PollsNavigator } from '~/containers'
 import { PreSplash } from '~/components'
 
-export default class AppContainer extends Component {
+class AppContainer extends Component {
   static PropTypes = {
-    isAuthenticating: PropTypes.bool.isRequired,
+    // isAuthenticating: PropTypes.bool.isRequired,
   }
-  static defaultProps = {
-    isAuthenticating: false
-  }
+  // static defaultProps = {
+  //   isAuthenticating: false
+  // }
   render () {
     return (
       <View style={{flex: 1}}>
@@ -20,3 +21,13 @@ export default class AppContainer extends Component {
     )
   }
 }
+
+function mapStateToProps ({authentication}){
+  return {
+    isAuthenticating: authentication.isAuthenticating
+  }
+}
+
+export default connect(
+  mapStateToProps
+)(AppContainer)
